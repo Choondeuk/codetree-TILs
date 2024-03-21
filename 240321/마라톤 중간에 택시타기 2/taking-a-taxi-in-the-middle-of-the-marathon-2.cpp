@@ -6,7 +6,7 @@ int main(){
     cin >> n;
     int x_arr[MAX];
     int y_arr[MAX];
-    int min_dis = 100000;
+    int min_dis = 9999999999;
     for(int i = 0; i < n; i++){
         cin >> x_arr[i]>> y_arr[i];
     }
