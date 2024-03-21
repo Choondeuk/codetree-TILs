@@ -11,7 +11,7 @@ int main() {
             cin >> arr[i][j];
         }
     }
-    if(arr[0][0] != arr[r-1][r-1]){
+    if(arr[0][0] != arr[c-1][r-1]){
         for(int col = 1; col < c-2; col++){
             for(int row = 0; row < r-2; row++){
                 if(arr[0][0] != arr[col][row]){
