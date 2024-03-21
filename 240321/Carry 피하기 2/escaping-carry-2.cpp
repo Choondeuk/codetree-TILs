@@ -4,7 +4,7 @@ using namespace std;
 #define MAX 20
 int main() {
     int n;
-    int max_sum = 0;
+    int max_sum = -1;
     int arr[MAX] = {};
     cin >> n;
     for(int i = 0; i < n; i++){
@@ -29,6 +29,7 @@ int main() {
                 if(carry_off == true){
                     sum = arr[j] + arr[k] + arr[l];
                     max_sum = max(max_sum, sum);
+                
                 }
             }
         }
