@@ -8,7 +8,7 @@ int main() {
     char arr[MAX][MAX] = {};
     for(int i = 0; i < r; i++){
         for(int j = 0; j < c; j++){
-            cin >> arr[i][j];
+            cin >> arr[j][i];
         }
     }
     if(arr[0][0] != arr[c-1][r-1]){
