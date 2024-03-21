@@ -13,8 +13,9 @@ int main() {
         int sum = 0;
         for(int k = j+2; k < n; k++){
             sum = arr[j] + arr[k];
+            max_sum = max(max_sum, sum);
         }
-        max_sum = max(max_sum, sum);
+
     }
     cout << max_sum;
     return 0;
