@@ -13,7 +13,7 @@ int main() {
     }
     if(arr[0][0] != arr[c-1][r-1]){
         for(int col = 1; col < c-2; col++){
-            for(int row = 0; row < r-2; row++){
+            for(int row = 1; row < r-2; row++){
                 if(arr[0][0] != arr[col][row]){
                     for(int col_2 = col+1; col_2 < c-1; col_2++){
                         for(int row_2 = row+1; row_2 < r-1; row_2++){
