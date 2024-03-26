@@ -4,20 +4,16 @@ using namespace std;
 int main() {
     int N, K;
     cin >> N >> K;
+    int n;
+    char c;
     int max_score = 0, score = 0;
-    int placed[MAX] = {};
-    char alp[MAX] = {};
     int map[MAX+1] = {};
     for(int i = 0; i < N; i++){
-        cin >> placed[i] >>  alp[i]; 
+        cin >> n >>  c;
+        if(c == 'G')    map[n] = 1;
+        else    map[n] = 2;
     }
-    for(int i = 0; i < N; i++){
-        if(alp[i] == 'G')   map[placed[i]] = 1;
 
-        else    map[placed[i]] = 2;
-
-
-    }
     for(int i = 1; i <= MAX+1-K; i++){
         for(int j = i; j < i+K+1; j++){
             score += map[j];
