@@ -1,26 +1,38 @@
 #include <iostream>
-using namespace std;
-#define MAX 10000
-int main() {
-    int N, K;
-    cin >> N >> K;
-    int n;
-    char c;
-    int max_score = 0, score = 0;
-    int map[MAX+1] = {};
-    for(int i = 0; i < N; i++){
-        cin >> n >>  c;
-        if(c == 'G')    map[n] = 1;
-        else    map[n] = 2;
-    }
 
-    for(int i = 1; i <= MAX+1-K; i++){
-        for(int j = i; j < i+K+1; j++){
-            score += map[j];
-        }
-        max_score = max(max_score, score);
-        score = 0;
+using namespace std; 
+
+int n,k;
+#define N_MAX 100 + 1
+#define NUM_MAX 10'000 + 1
+
+char arr[NUM_MAX]; 
+int prefix[NUM_MAX]; 
+
+int GetSum(int x, int y){
+    return prefix[y] - prefix[x-1];
+}
+
+int main() {
+    cin>>n>>k;
+
+    for(int i=1; i<=n; i++){
+        int pos; char c; 
+        cin>>pos>>c;
+        if(c=='G')
+            prefix[pos]++;
+        else
+            prefix[pos]+=2; 
     }
-    cout << max_score;
+        
+    for(int i=2; i<NUM_MAX; i++){
+        prefix[i] += prefix[i-1];
+    }
+    
+    int ans = 0; 
+    for(int i=1; i<NUM_MAX-k; i++)
+        ans = max(ans, GetSum(i, i+k));
+    cout<<ans; 
+
     return 0;
 }
