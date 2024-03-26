@@ -15,7 +15,7 @@ int main() {
         if(alp[i] == 'G')   map[placed[i]] = 1;
         else map[placed[i]] = 2;
     }
-    for(int i = 1; i <= MAX+1-K; i++){
+    for(int i = 1; i < MAX+1-K; i++){
         for(int j = i; j < i+K+1; j++){
             score += map[j];
         }
