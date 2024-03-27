@@ -13,6 +13,10 @@ int main() {
             cin >> arr[i][j];
         }
     }
+    if(m == 1){
+        cout << 2*n;
+        return 0;
+    }
     for(int col = 0; col < n; col++){
         for(int i = 1; i < n; i++){
             if(arr[col][prev] != arr[col][i]){
