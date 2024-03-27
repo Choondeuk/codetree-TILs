@@ -19,6 +19,7 @@ int main() {
     }
     for(int col = 0; col < n; col++){
         prev = 0;
+        cnt_2 = 0;
         for(int i = 1; i < n; i++){
             if(arr[col][prev] != arr[col][i]){
                 cnt_2  = 0; 
@@ -34,6 +35,7 @@ int main() {
 
     for(int row = 0; row < n; row++){
         prev = 0;
+        cnt_1 = 0;
         for(int i = 1; i < n; i++){
             if(arr[prev][row] != arr[i][row]){
                 cnt_1 = 0;
