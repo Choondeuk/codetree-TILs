@@ -15,11 +15,12 @@ int main() {
     }
     for(int i = 0; i <= 100; i++){
         int sum = 0;
-        if(i >= 0 && i+2*k <= 100){
             for(int j = i; j <= i+2*k; j++){
-                sum += arr[j];
+                if(j >= 0 && j <= 100){
+                    sum += arr[j];
+                }
             }
-        }
+        
         max_sum = max(max_sum, sum);
     }
     cout << max_sum;
