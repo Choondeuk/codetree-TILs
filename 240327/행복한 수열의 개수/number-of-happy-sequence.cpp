@@ -7,6 +7,7 @@ int arr[MAX][MAX] = {};
 int seq[MAX] = {};
 bool check(){
     int cnt = 1;
+    int max_cnt = 1;
     int prev = 0;
     for(int i = 1; i < n; i++){
         if(seq[prev] != seq[i]){
@@ -14,8 +15,9 @@ bool check(){
         }
         cnt++;
         prev = i;
+        max_cnt = max(max_cnt, cnt);
     }
-    if(cnt >= m){
+    if(max_cnt >= m){
         cnt_happy++;
         return 0;
     }
