@@ -13,10 +13,12 @@ int main() {
         cin >> qty[i] >> place[i];
         arr[place[i]] += qty[i];
     }
-    for(int i = 0; i <= 100-2*k; i++){
+    for(int i = 0; i <= 100; i++){
         int sum = 0;
-        for(int j = i; j <= i+2*k; j++){
-            sum += arr[j];
+        if(i >= 0 && i+2*k <= 100){
+            for(int j = i; j <= i+2*k; j++){
+                sum += arr[j];
+            }
         }
         max_sum = max(max_sum, sum);
     }
