@@ -14,11 +14,12 @@ bool check(){
         }
         cnt++;
         prev = i;
-        if(cnt == m){
-            cnt_happy++;
-            return 0;
-        }
     }
+    if(cnt >= m){
+        cnt_happy++;
+        return 0;
+    }
+    
     return 0;
 }
 
