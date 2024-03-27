@@ -5,33 +5,30 @@ int n, m;
 int cnt_happy = 0;
 int arr[MAX][MAX] = {};
 int seq[MAX] = {};
-int check(){
-        int cnt = 1;
-        int prev = 0;
-        for(int i = 0; i < n; i++){
-            if(seq[prev] != seq[i]){
-                cnt = 0;
-            }
-            cnt++;
-            prev = i;
-            if(cnt == m){
-                cnt_happy++;
-                return 0;
-            }
+bool check(){
+    int cnt = 1;
+    int prev = 0;
+    for(int i = 1; i < n; i++){
+        if(seq[prev] != seq[i]){
+            cnt = 0;
         }
-        return 0;
+        cnt++;
+        prev = i;
+        if(cnt == m){
+            cnt_happy++;
+            return 0;
+        }
+    }
+    return 0;
 }
 
 int main() {
-
     cin >> n >> m;
-
     for(int col = 0; col < n; col++){
         for(int row = 0; row < n; row++){
             cin >> arr[col][row];
         }
     }
-
     
     for(int col = 0; col < n; col++){
         for(int i = 0; i < n; i++){
