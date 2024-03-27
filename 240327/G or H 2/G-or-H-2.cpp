@@ -14,7 +14,8 @@ int main() {
     for(int i = 0; i <= 100; i++){
         for(int j = i; j <= 100; j++){
             int G = 0, H = 0;
-            int size = 0;
+            int size = j-i;
+            if(size < max_size) continue;
             for(int k = i; k <= j; k++){
                 if(arr[k] == 'G')   G++;
                 else if(arr[k] == 'H')  H++;
