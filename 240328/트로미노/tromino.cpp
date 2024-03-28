@@ -1,12 +1,19 @@
 #include <iostream>
 using namespace std;
 #define MAX 200
-int grid[MAX][MAX] = {};
-int n, m;
-
-int shapes[6][3][3] = {
+int arr[MAX][MAX] = {};
+int n, m; 
+int shapes [6][3][3] = {
     {{1, 1, 0},
     {1, 0, 0},
+    {0, 0, 0}},
+
+    {{0, 1, 0},
+    {1, 1, 0},
+    {0, 0, 0}},
+
+    {{1, 0, 0},
+    {1, 1, 0},
     {0, 0, 0}},
 
     {{1, 1, 0},
@@ -14,52 +21,46 @@ int shapes[6][3][3] = {
     {0, 0, 0}},
 
     {{1, 0, 0},
-    {1, 1, 0},
-    {0, 0, 0}},
-
-    {{0, 1, 0},
-    {1, 1, 0},
-    {0, 0, 0}},
-
-    {{1, 1, 1},
-    {0, 0, 0},
-    {0, 0, 0}},
-
-    {{1, 0, 0},
     {1, 0, 0},
     {1, 0, 0}},
-};
-int getsum(int x, int y){
-    int max_sum = 0;
+    
+    {{1, 1, 1},
+    {0, 0, 0},
+    {0, 0, 0}}
 
-    for(int i = 0; i < 6; i++){
-        bool is_pos = true;
-        int sum = 0;
-        for(int dx = 0; dx < 3; dx++){
+    };
+    
+    int cal_sum(int x, int y){
+        int max_sum = 0;
+        for(int i = 0; i < 6; i++){
+            int sum = 0;
             for(int dy = 0; dy < 3; dy++){
-                if(shapes[i][dx][dy] == 0)  continue;
-                if(x + dx >= n || y + dy >= m)  is_pos = false;
-                else    sum += grid[x+dx][y+dy];
+                for(int dx = 0; dx < 3; dx++){
+                    if(shapes[i][dy][dx] == 0)  continue;
+                    if(x+dx >= m|| y+dy >= n)   break;
+                    sum += arr[y+dy][x+dx];
+                    
+                }
             }
-            if(is_pos)
-                max_sum = max(max_sum, sum);
+            max_sum = max(max_sum, sum);
         }
 
+        return max_sum;
     }
-    return max_sum;
-}
-int main(){
+    
 
+
+int main(){
     cin >> n >> m;
     for(int i = 0; i < n; i++){
         for(int j = 0; j < m; j++){
-            cin >> grid[i][j];
+            cin >> arr[i][j];
         }
     }
     int ans = 0;
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < m; j++){
-            ans = max(ans, getsum(i, j));
+    for(int y = 0; y < n; y++){
+        for(int x = 0; x < m; x++){
+            ans = max(cal_sum(x, y), ans);   
         }
     }
     cout << ans;
