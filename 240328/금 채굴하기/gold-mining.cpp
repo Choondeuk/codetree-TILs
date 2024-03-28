@@ -23,14 +23,16 @@ int main() {
     cin >> n >> m;
     for(int i = 0; i < n; i++){
         for(int j = 0; j < n; j++){
-            cin >> arr[i][j]
+            cin >> arr[i][j];
         }
     }
     int max_gold = 0;
     for(int y = 0; y < n; y++){
         for(int x = 0; x < n; x++){
             for(int k = 0; k < 2*(n-1); k++){
-                max_gold = max(max_gold, get_nog(y, x, k) * m - get_area(k) )
+                if(get_nog(y, x, k) * m - get_area(k) >= 0){
+                    max_gold = max(max_gold, get_nog(y, x, k));
+                }
             }
         }
     }
