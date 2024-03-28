@@ -29,8 +29,8 @@ int main() {
     int max_gold = 0;
     for(int y = 0; y < n; y++){
         for(int x = 0; x < n; x++){
-            for(int k = 0; k < 2*(n-1); k++){
-                if(get_nog(y, x, k) * m - get_area(k) >= 0){
+            for(int k = 0; k <= 2*(n-1); k++){
+                if(get_nog(y, x, k) * m  >= get_area(k)){
                     max_gold = max(max_gold, get_nog(y, x, k));
                 }
             }
