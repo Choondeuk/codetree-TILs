@@ -4,23 +4,21 @@ using namespace std;
 int main() {
     string a, b;
     cin >> a;
-    b = a[0];
     int len = a.length();
-    int prev = 0;
+    b = "";
     int cnt = 1;
+    char cur_a = a[0];
     for(int i = 1; i < len; i++){
-        if(a[i-1] == a[i]){
+        if(a[i] == cur_a)
             cnt++;
-            continue;
-        }
-        else    {
-            b += to_string(cnt) + a[i];
+        else{
+            b += cur_a + to_string(cnt);
             cnt = 1;
         }
-
-        
+        cur_a = a[i];
     }
-    b += to_string(cnt);
+    //cb cc
+    b += cur_a + to_string(cnt);
     cout << b.length() << endl << b;
     return 0;
 }
