@@ -9,7 +9,7 @@ int main() {
     if(a.find("ee") == string::npos)   cout << "No";
     else    cout << "Yes";
     if(a.find("ab") == string::npos)   cout << " " << "No";
-    else    cout << "Yes";
+    else    cout << " " << "Yes";
 
     return 0;
 }
