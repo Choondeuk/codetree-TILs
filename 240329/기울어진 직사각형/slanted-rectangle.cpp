@@ -9,7 +9,7 @@ int dy[NUM] = {1, 1, -1, -1};
 int n;
 
 bool check_range(int y, int x){
-    return(0 <= x && x < n && y <= 0 && y < n);
+    return(0 <= x && x < n && 0 <= y && y < n);
 }
 int get_score(int y, int x, int k, int l){
     int sum = 0;
@@ -18,7 +18,7 @@ int get_score(int y, int x, int k, int l){
         for(int i = 0; i < len[d]; i++){
             y += dy[d];
             x += dx[d];
-            if(check_range){
+            if(check_range(y, x)){
                 sum += arr[y][x];
             }
         }
@@ -38,7 +38,7 @@ int main(){
         for(int x = 0; x < n; x++){
             for(int k = 0; k < 4; k++){
                 for(int l = 0; l < 4; l++){
-                    max_score = max(max_score,get_score(y, x, k, l));
+                    max_score = max(max_score, get_score(y, x, k, l));
                 }
             }
         }
