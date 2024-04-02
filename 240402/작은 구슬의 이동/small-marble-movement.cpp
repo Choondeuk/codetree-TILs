@@ -1,42 +1,40 @@
 #include <iostream>
 using namespace std;
-#define MAX 50
 int n, t, y, x;
-bool turn = false;
-char dir;   
-int arr[MAX+1][MAX+1] = {};
+char dir;
+
+int direction(char a){
+    int num;
+    if(a == 'U')    num = 1;
+    else if(a == 'D')   num = 2;
+    else if(a == 'L')   num = 3;
+    else    num = 0;
+
+    return num;
+}
+
+int Inrange(int y, int x, int n){
+    return(1 <= y && y <= n && 1 <= x && x <= n);
+}
+
 int dx[4] = {1, 0, 0, -1};
 int dy[4] = {0, -1, 1, 0};
 
-int direction(char a){
-    if(a == 'U')    return 1;
-    else if(a == 'D')   return 2;
-    else if(a == 'R')   return 0;
-    else    return 3;
-}
-int Inrange(int y, int x, int n){
-    if(1 <= y && y <= n && 1 <= x && x <= n)
-        return 0;
-    
-    turn = true;
-    return 3;
-}
+
 int main() {
     cin >> n >> t >> y >> x >> dir;
-    // arr[y][x] = 1;
-    
-    int num = direction(dir);
+    int dir_num = direction(dir);
     for(int i = 1; i <= t; i++){
-        turn = false;
-        // arr[y][x] = 0;
-        num = abs(Inrange(y+dy[num], x+dx[num], n) - num);
-        if(turn)    continue;
-        x += dx[num];
-        y += dy[num];
-        // cout << y << endl;
-        // arr[y][x] = 1;
+        int cur_x = x + dx[dir_num];
+        int cur_y = y + dy[dir_num];
+        if(Inrange(cur_y, cur_x, n)){
+            x = cur_x;
+            y = cur_y;
+        }
+        else{
+            dir_num = 3 - dir_num;
+        }
     }
-    cout << y << " " << x; 
-
+    cout << y << " " << x;
     return 0;
 }
