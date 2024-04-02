@@ -9,8 +9,8 @@ int dx[4] = {1, 0, 0, -1};
 int dy[4] = {0, -1, 1, 0};
 
 int direction(char a){
-    if(a == 'U')    return 2;
-    else if(a == 'D')   return 1;
+    if(a == 'U')    return 1;
+    else if(a == 'D')   return 2;
     else if(a == 'R')   return 0;
     else    return 3;
 }
@@ -33,6 +33,7 @@ int main() {
         if(turn)    continue;
         x += dx[num];
         y += dy[num];
+        // cout << y << endl;
         // arr[y][x] = 1;
     }
     cout << y << " " << x; 
