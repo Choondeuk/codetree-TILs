@@ -2,7 +2,7 @@
 using namespace std;
 #define MAX 1000
 int n, k, num;
-int cnt = 1;
+int cnt = 0;
 char mirror;
 int x = 0, y = 0;
 int arr[MAX][MAX] = {};
@@ -16,9 +16,9 @@ int dy[4] = {0, 1, 0, -1};
 
 int change_ang(int y, int x){
     if(arr[y][x] == 1)
-        return 3 - num;
+        return (3 - num);
     else 
-        return num ^ 1;
+        return (num ^ 1);
 }
 void initialize(){
     if(k <= n)  num = 1;
@@ -36,7 +36,9 @@ void initialize(){
         x = nx;
         y = ny;
     }
+    
 }
+
 // / 30 12
 // \ 01 23
 
@@ -45,7 +47,7 @@ int main(){
     for(int i = 0; i < n; i++){
         for(int j = 0; j < n; j++){
             cin >> mirror;
-            if(mirror = '/')
+            if(mirror == '/')
                 arr[i][j] = 1;
             else
                 arr[i][j] = 2; 
@@ -54,12 +56,15 @@ int main(){
     cin >> k;
     initialize();
     while(Inrange(y, x)){
-        x += dx[change_ang(y, x)];
-        y += dy[change_ang(y, x)];
+        num = change_ang(y, x);
+        x += dx[num];
+        y += dy[num];
         cnt++;
+        // cout << x << " " << y << " " << arr[y][x] << endl;
     }
     cout << cnt;
     return 0;
+    
 }
 
 
