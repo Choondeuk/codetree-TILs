@@ -32,10 +32,11 @@ void print(){
 }
 int main() {
     cin >> n >> m;
-    for(int i = 0; i < n*m; i++){
+    for(int i = 1; i <= n*m; i++){
         arr[y][x] = a;
         move();
-        a = (a + 1 -'A')%26 + 65;
+        // a = (a + 1 -'A')%26 + 65;
+        a = 'A' + (i % 26);
     }
     print();
     return 0;
