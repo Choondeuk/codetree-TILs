@@ -35,8 +35,10 @@ int main() {
     for(int i = 0; i < n*m; i++){
         arr[y][x] = a;
         move();
-        a = (a + 1)%65 + 65;
+        a = (a + 1 -'A')%26 + 65;
     }
     print();
     return 0;
 }
+
+// 65 66 - 80
