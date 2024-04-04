@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-#define MAX 100
+#define MAX 101
 int n, m;
 char a = 'A';
 int num = 0;
@@ -32,10 +32,10 @@ void print(){
 }
 int main() {
     cin >> n >> m;
-    for(int i = 0; i < n*m;i++){
+    for(int i = 0; i < n*m; i++){
         arr[y][x] = a;
         move();
-        a++;    
+        a = a + 1%(65);
     }
     print();
     return 0;
