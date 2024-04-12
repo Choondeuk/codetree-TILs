@@ -20,11 +20,10 @@ void DFS(int y, int x){
         int cur_y = y + dy[i];
         if(cango(cur_y, cur_x)){
             visited[cur_y][cur_x] = 1;
-            x = cur_x;
-            y = cur_y;
-            if(x == m-1 && y == n-1)
+            if(cur_x == m-1 && cur_y == n-1)
                 cnt = true;
-            DFS(y, x);
+            DFS(cur_y, cur_x);
+            
         }
     }
 }
