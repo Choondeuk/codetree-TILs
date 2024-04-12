@@ -2,7 +2,7 @@
 using namespace std;
 #define MAX 100
 int n, m, sn;
-int cnt = 0;
+bool cnt = false;
 int arr[MAX][MAX] = {};
 int visited[MAX][MAX] = {};
 int dx[2] = {1, 0};
@@ -23,15 +23,13 @@ void DFS(int y, int x){
             x = cur_x;
             y = cur_y;
             if(x == m-1 && y == n-1)
-                cnt++;
+                cnt = true;
             DFS(y, x);
-
         }
     }
 }
 int main() {
     cin >> n >> m ; 
-
     for(int i = 0; i < n; i++){
         for(int j = 0; j < m; j++){
             cin >> sn;
