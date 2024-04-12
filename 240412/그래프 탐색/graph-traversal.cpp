@@ -6,7 +6,7 @@ int cnt = 0;
 int graph[MAX][MAX] = {};
 int visited[MAX] = {};
 void DFS(int vertex){
-    for(int curr_v = 1; curr_v <= MAX; curr_v++){
+    for(int curr_v = 1; curr_v <= n; curr_v++){
         if(graph[vertex][curr_v] && !visited[curr_v]){
             cnt++;
             visited[curr_v] = 1;
