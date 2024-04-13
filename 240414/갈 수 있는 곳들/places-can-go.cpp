@@ -15,16 +15,15 @@ bool Inrange(int y, int x) {
 void BFS(){
     while(!q.empty()){
         pair <int, int> cur_p = q.front();
-        int x = cur_p.first;
-        int y = cur_p.second;
+        int y = cur_p.first;
+        int x = cur_p.second;
         q.pop();
         for(int h = 0; h < 4; h++){
             int nx = x + dx[h];
             int ny = y + dy[h];
             if(!visited[ny][nx] && Inrange(ny, nx) && !arr[ny][nx]){
-                
-                q.push(make_pair(ny, nx));
                 visited[ny][nx] = true;
+                q.push(make_pair(ny, nx));
             }
 
         }
