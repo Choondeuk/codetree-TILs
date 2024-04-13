@@ -41,7 +41,7 @@ int main() {
     }
     for(int i = 0; i < k; i++){
         cin >> r >> c;
-        q.push(make_pair(r, c));
+        q.push(make_pair(r-1, c-1));
     }
     BFS();
     for(int i = 0; i < n; i++){
