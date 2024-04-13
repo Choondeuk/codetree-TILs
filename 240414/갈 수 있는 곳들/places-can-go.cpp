@@ -22,8 +22,9 @@ void BFS(){
             int nx = x + dx[h];
             int ny = y + dy[h];
             if(!visited[ny][nx] && Inrange(ny, nx) && !arr[ny][nx]){
-                visited[ny][nx] = true;
+                
                 q.push(make_pair(ny, nx));
+                visited[ny][nx] = true;
             }
 
         }
