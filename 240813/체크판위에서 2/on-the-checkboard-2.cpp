@@ -13,16 +13,18 @@ int main() {
     }
     char t =A[0][0];
     for(int i=1;i<R;i++){
-        if (A[R][C] == A[0][0]){
-            break;
-        }
         for(int j = 1;j<C-1;j++){
             if (A[i][j] != t){
                 cnt = ((R-2)-i) *((C-2)-j);
             }
         }
     }
+    if (A[R-1][C-1] == A[0][0]){
+            cout << 0;
+    }
+    else{
     cout << cnt;
+    }
 
 
     // 여기에 코드를 작성해주세요.
