@@ -13,9 +13,15 @@ int main() {
     }
     char t =A[0][0];
     for(int i=1;i<R;i++){
-        for(int j = 1;j<C-1;j++){
+        for(int j = 1;j<C;j++){
             if (A[i][j] != t){
-                cnt = ((R-2)-i) *((C-2)-j);
+                for(int x=i+1;x<R-1;x++){
+                    for(int y=j+1;y<C-1;y++){
+                        if (A[x][y] == t){
+                            cnt++;
+                        }
+                    }
+                }
             }
         }
     }
