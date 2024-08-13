@@ -10,7 +10,7 @@ int main() {
         B[i][0] = A[i][0];
         B[i][1] = A[i][1];
     }
-    int min=100,cnt=0;
+    int min,cnt=0;
     int a,b;
     
 
@@ -41,7 +41,7 @@ int main() {
             
         }
       
-        if(cnt<min){
+        if(cnt<min || i == 0){
             min = cnt;
         }
         cnt = 0;
