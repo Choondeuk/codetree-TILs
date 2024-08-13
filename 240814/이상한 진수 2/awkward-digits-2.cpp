@@ -1,38 +1,36 @@
 #include <iostream>
 using namespace std;
+#include <string>
 #include <cmath>
 
 int main() {
-    int n;
+    string n,b;
     cin >>n;
-    int sum=0;
-    int A[4],B[4];
-    A[0] = n/1000;
-    A[1] = (n/100)%10;
-    A[2] = (n/10)%10;
-    A[3] = n%10;
-    for(int i=0;i<4;i++){
-        B[i] = A[i];
-    }
-    int max =0,cnt=0;
-    for(int i=1;i<4;i++){
-        if(A[i]==1){
-            A[i] = 0;
+    b =n;
+
+    int cnt = 0,max =0;
+    for(int i=0;i<n.length();i++){
+        if(n[i] == '1'){
+            n[i] = '0';
         }
-        else {
-            A[i] = 1;
+        else{
+            n[i] = '1';
         }
-        for(int j=0;j<4;j++){
-            cnt+= A[j]*pow(2,3-j);
+  
+        int B[n.length()];
+        for(int j=0;j<n.length();j++){
+            B[j] = n[j] - '0';
+            cnt += B[j] * pow(2,n.length()-1-j);
+           
         }
-        if(cnt>max){
+
+        if(cnt > max){
             max = cnt;
         }
-        cnt = 0;
-        A[i] = B[i];
+        cnt=0;
+        n = b;
 
     }
-    cout <<max;
-    // 여기에 코드를 작성해주세요.
+    cout << max;
     return 0;
 }
