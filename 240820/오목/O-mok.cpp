@@ -91,7 +91,7 @@ int main() {
                     if(b==5){
                         s=1;
                         x=i+3;
-                        y=j-2;
+                        y=j-1;
                     }
                 }
                 else if (a[i+k][j-k] == 2){
@@ -99,7 +99,7 @@ int main() {
                     if(w==5){
                         s=2;
                         x=i+3;
-                        y=j-2;
+                        y=j-1;
                     }
                 }
             }
