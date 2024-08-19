@@ -5,10 +5,10 @@ int main() {
     int n;
     cin >> n;
     int a[n],max=-1,cnt=0;
-    string str[n];
+   
     for(int i=0;i<n;i++){
         cin >>a[i];
-        str[i] = to_string(a[i]);
+
     }
 
     for(int i=0;i<n-2;i++){
