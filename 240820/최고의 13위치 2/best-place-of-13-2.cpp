@@ -27,17 +27,17 @@ int main() {
         }
     }
     if(N>5){
-    for(int i=0;i<N-5;i++){
+    for(int i=0;i<N;i++){
         for(int j=0;j<N-5;j++){
             cnt = a[i][j] + a[i][j+1] + a[i][j+2];
-        for(int k=j+3;k<N-2;k++){
-            cnt += a[i][k] + a[i][k+1] + a[i][k+2];
-            if(cnt>max){
+            for(int k=j+3;k<N-2;k++){
+                cnt += a[i][k] + a[i][k+1] + a[i][k+2];
+                if(cnt>max){
                 max = cnt;
+                }
+                cnt = a[i][j] + a[i][j+1] + a[i][j+2];
             }
-            cnt = a[i][j] + a[i][j+1] + a[i][j+2];
         }
-    }
     }}
 
     cout <<max;
