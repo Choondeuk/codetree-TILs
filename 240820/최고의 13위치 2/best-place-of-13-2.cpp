@@ -10,7 +10,7 @@ int main() {
             cin >> a[i][j];
         }
     }
-    int max,cnt=0;
+    int max=0,cnt=0;
     for(int i=0;i<N;i++){
         for(int j=0;j<N-2;j++){
             cnt = a[i][j] + a[i][j+1] + a[i][j+2];
