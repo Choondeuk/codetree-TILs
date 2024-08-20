@@ -20,7 +20,7 @@ int main() {
                     if(cnt>max){
                         max = cnt;
                     }
-                    cnt = 0;
+                    cnt = a[i][j] + a[i][j+1] + a[i][j+2];
                 }
             }
             
@@ -35,7 +35,7 @@ int main() {
             if(cnt>max){
                 max = cnt;
             }
-            cnt = 0;
+            cnt = a[i][j] + a[i][j+1] + a[i][j+2];
         }
     }
     }}
