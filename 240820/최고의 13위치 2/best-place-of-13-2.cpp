@@ -20,9 +20,10 @@ int main() {
                     if(cnt>max){
                         max = cnt;
                     }
+                    cnt = 0;
                 }
             }
-            cnt = 0;
+            
         }
     }
     if(N>5){
@@ -31,12 +32,12 @@ int main() {
             cnt = a[i][j] + a[i][j+1] + a[i][j+2];
         for(int k=j+3;k<N-2;k++){
             cnt += a[i][k] + a[i][k+1] + a[i][k+2];
+            if(cnt>max){
+                max = cnt;
+            }
+            cnt = 0;
         }
     }
-    if(cnt>max){
-        max = cnt;
-    }
-    cnt = 0;
     }}
 
     cout <<max;
