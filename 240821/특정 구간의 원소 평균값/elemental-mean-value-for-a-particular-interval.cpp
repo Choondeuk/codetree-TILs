@@ -12,17 +12,18 @@ int main() {
     int cnt = 0;
     for(int i=1;i<N+1;i++){
         for(int j=0;j<N-i+1;j++){
+            mean = 0;
             for(int k=0;k<i;k++){
                 mean += (double)a[j+k];
             }
-            mean = (double)mean / i;
-            for(int x=0;x<N;x++){
+            mean = (double)mean / (double)i;
+            for(int x=j;x<j+i;x++){
                 if(a[x] == mean){
                     cnt++;
                     break;
                 }
             }
-            mean = 0;
+            
         }
     }
     cout << cnt;
