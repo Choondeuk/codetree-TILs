@@ -14,10 +14,10 @@ int main() {
     for(int i=0;i<N-T+1;i++){
         ud = 0;
         for(int j=0;j<T;j++){
-            if(a[i+j]<T){
+            if(a[i+j]<H){
                 ud += T-a[i+j];
             }
-            else if(a[i+j]>T){
+            else if(a[i+j]>H){
                 ud += a[i+j]-T;
             }
         }
