@@ -15,10 +15,10 @@ int main() {
         ud = 0;
         for(int j=0;j<T;j++){
             if(a[i+j]<H){
-                ud += T-a[i+j];
+                ud += H-a[i+j];
             }
             else if(a[i+j]>H){
-                ud += a[i+j]-T;
+                ud += a[i+j]-H;
             }
         }
         if(ud <min){
