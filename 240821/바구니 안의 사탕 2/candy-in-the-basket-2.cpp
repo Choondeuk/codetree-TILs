@@ -9,9 +9,10 @@ int main() {
     int cnt,loc;
     for(int i=0;i<N;i++){
         cin >> cnt >>loc;
-        a[loc+1] +=cnt;
+        a[loc-1] +=cnt;
     }
     int max = 0, cnt2=0,loc2;
+    if(K<50){
     for(int i=0;i<100-2*K;i++){
         for(int j=0;j<2*K+1;j++){
             cnt2 +=a[i+j];
@@ -21,6 +22,11 @@ int main() {
             loc2 = i+K-1;
         }
         cnt2 = 0;
+    }}
+    else{
+        for(int i=0;i<100;i++){
+            max+=a[i];
+        }
     }
     cout <<max;
     
