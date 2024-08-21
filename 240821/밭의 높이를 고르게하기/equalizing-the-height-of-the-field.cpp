@@ -10,7 +10,7 @@ int main() {
         cin >>a[i];
     }
     int ud=0,cnt =0;
-    int min = 100;
+    int min = 10000;
     for(int i=0;i<N-T+1;i++){
         ud = 0;
         for(int j=0;j<T;j++){
