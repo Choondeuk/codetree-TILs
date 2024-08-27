@@ -17,6 +17,9 @@ int main() {
             if(a[i][j-1] == a[i][j]){
                 cnt1++;
             }
+            else if(a[i][j-1] != a[i][j]){
+                cnt1 = 1;
+            }
         }       
         if(cnt1>=m){
             cnt2++;
@@ -27,6 +30,9 @@ int main() {
         for(int i=1;i<n;i++){
             if(a[i-1][j] == a[i][j]){
                 cnt1++;
+            }
+            else if(a[i-1][j] != a[i][j]){
+                cnt1 = 1;
             }
         }       
         if(cnt1>=m){
