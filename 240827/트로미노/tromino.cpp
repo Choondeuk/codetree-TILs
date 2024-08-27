@@ -42,6 +42,17 @@ int main() {
             sum = 0;
         }
     }
+    for(int j=0;j<m;j++){
+        for(int i=0;i<n-2;i++){
+            for(int k=0;k<3;k++){
+                sum+= a[i+k][j];
+            }
+            if(sum > max){
+                max = sum;
+        }
+            sum = 0;
+        }
+    }
     cout << max;
 
     return 0;
