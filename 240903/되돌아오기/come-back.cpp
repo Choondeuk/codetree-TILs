@@ -37,6 +37,10 @@ int main() {
                 break;
             }
         }
+        if(x==0 && y ==0){
+                fin = cnt;
+                break;
+            }
     }
     cout << fin;
     // 여기에 코드를 작성해주세요.
