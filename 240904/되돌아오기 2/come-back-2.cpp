@@ -29,6 +29,9 @@ int main() {
             cout << cnt;
             break;
         }
+        else if(i == str.length()-1){
+            cout << -1;
+        }
     }
     // 여기에 코드를 작성해주세요.
     return 0;
