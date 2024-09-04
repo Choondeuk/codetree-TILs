@@ -15,7 +15,7 @@ int main() {
     int r,c;
     for(int i=0;i<N;i++){
         for(int j=0;j<N;j++){
-            a[N][N] = 0;
+            a[i][j] = 0;
         }
     }
     for(int i=0;i<M;i++){
