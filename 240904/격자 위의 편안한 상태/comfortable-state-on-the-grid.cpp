@@ -29,7 +29,7 @@ int main() {
                 cnt++;
             }
         }
-        if (cnt >= 3){
+        if (cnt == 3){
             cout << 1<<endl;
         }
         else{
