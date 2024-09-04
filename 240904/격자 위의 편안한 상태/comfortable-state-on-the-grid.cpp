@@ -1,5 +1,8 @@
 #include <iostream>
 using namespace std;
+bool InRange(int x,int y,int n){
+    return (0<=x && x<n && 0<=y && y<n);
+}
 
 int main() {
     int N,M;
@@ -22,8 +25,8 @@ int main() {
         for(int j=0;j<4;j++){
             nx = r-1 + dx[j];
             ny = c-1 + dy[j];
-            if(a[nx][ny] == 1){
-                cnt ++;
+            if(InRange(nx,ny,N) && a[nx][ny] == 1){
+                cnt++;
             }
         }
         if (cnt >= 3){
